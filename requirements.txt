@@ -1,0 +1,11 @@
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+mediapipe>=0.10.14
+opencv-contrib-python>=4.8
+pillow>=10.0
+matplotlib>=3.7
+imageio-ffmpeg>=0.4.9
+plotly>=5.18
+streamlit>=1.48
+pytest>=7.4

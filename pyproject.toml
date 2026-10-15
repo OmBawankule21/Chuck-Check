@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chuckcheck"
+version = "1.0.0"
+description = "Cricket bowling-action legality analysis (ICC 15° elbow-extension rule) from a single phone video"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kavita Mukherjee" }]
+keywords = ["computer-vision", "pose-estimation", "cricket", "biomechanics", "mediapipe", "sports-analytics"]
+dependencies = [
+  "numpy>=1.24", "scipy>=1.10", "pandas>=2.0", "mediapipe>=0.10.14", "opencv-contrib-python>=4.8",
+  "pillow>=10.0", "matplotlib>=3.7", "imageio-ffmpeg>=0.4.9", "plotly>=5.18",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.48"]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+
+[project.scripts]
+chuckcheck = "chuckcheck.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["chuckcheck*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
